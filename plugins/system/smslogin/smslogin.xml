@@ -1,1 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="system" method="upgrade">
+    <name>PLG_SYSTEM_SMSLOGIN</name>
+    <creationDate>2025-07-06</creationDate>
+    <author>Developer</author>
+    <authorEmail>admin@example.com</authorEmail>
+    <authorUrl>https://example.com</authorUrl>
+    <copyright>Copyright (C) 2025. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later</license>
+    <version>1.0.0</version>
+    <description>PLG_SYSTEM_SMSLOGIN_DESCRIPTION</description>
 
+    <files>
+        <filename plugin="smslogin">smslogin.php</filename>
+        <folder>language</folder>
+    </files>
+
+    <languages>
+        <language tag="en-GB">language/en-GB/plg_system_smslogin.ini</language>
+        <language tag="en-GB">language/en-GB/plg_system_smslogin.sys.ini</language>
+        <language tag="fa-IR">language/fa-IR/plg_system_smslogin.ini</language>
+        <language tag="fa-IR">language/fa-IR/plg_system_smslogin.sys.ini</language>
+    </languages>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                    name="enabled"
+                    type="radio"
+                    label="PLG_SYSTEM_SMSLOGIN_ENABLED"
+                    description="PLG_SYSTEM_SMSLOGIN_ENABLED_DESC"
+                    default="1"
+                    class="btn-group btn-group-yesno"
+                    >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                
+                <field
+                    name="redirect_components"
+                    type="textarea"
+                    label="PLG_SYSTEM_SMSLOGIN_REDIRECT_COMPONENTS"
+                    description="PLG_SYSTEM_SMSLOGIN_REDIRECT_COMPONENTS_DESC"
+                    default="com_users,com_hikashop,com_community,com_kunena,com_virtuemart,com_jshopping"
+                    rows="3"
+                    cols="50"
+                />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
