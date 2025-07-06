@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="5.0" method="upgrade">
+    <name>SMS Login</name>
+    <creationDate>2025-07-06</creationDate>
+    <author>Developer</author>
+    <authorEmail>admin@example.com</authorEmail>
+    <authorUrl>https://example.com</authorUrl>
+    <copyright>Copyright (C) 2025. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later</license>
+    <version>1.0.0</version>
+    <description>کامپوننت ثبت نام و ورود پیامکی</description>
+
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">admin/sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">admin/sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>smslogin.php</filename>
+        <filename>controller.php</filename>
+        <folder>views</folder>
+        <folder>assets</folder>
+    </files>
+
+    <administration>
+        <menu>SMS Login</menu>
+        <files folder="admin">
+            <filename>smslogin.php</filename>
+            <folder>config</folder>
+            <folder>sql</folder>
+        </files>
+    </administration>
+
+    <plugins>
+        <plugin plugin="smslogin" group="system" />
+    </plugins>
+</extension>
